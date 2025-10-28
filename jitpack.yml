@@ -1,0 +1,8 @@
+jdk:
+  - openjdk17
+
+before_install:
+  - sed -i 's/gradle-[0-9.]*-bin.zip/gradle-8.7-bin.zip/' gradle/wrapper/gradle-wrapper.properties || true
+
+install:
+  - ./gradlew :openvpnlib:assembleRelease
